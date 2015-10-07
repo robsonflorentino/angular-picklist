@@ -12,7 +12,7 @@ Adicione a biblioteca na sua aplicação:
 ```
     html
         ...
-        <script src="bower_components/angular-csv-export/dist/csv-export.min.js"></script>
+        <script src="bower_components/angular-picklist/dist/angular-picklist.min.js"></script>
         ...
 ```
 
@@ -22,21 +22,25 @@ Adicione o módulo 'CsvExportModule' na sua aplicação:
         angular
             .module('myApp', [
                 ...
-                'CsvExportModule',
+                'PickList',
                 ...
             ])
     ...
 ```
 
-Adicione a diretiva **csv-export-directive** como um elemento ou um atributo com a seguinte opção:
+Adicione a diretiva **pick-list** como um elemento ou um atributo com a seguinte opção:
 ```
     html
         ...
-        <csv-export-directive source="products"></csv-export-directive>
+        <pick-list ng-model="productList" source="products" group="Teste"></pick-list>
         ...
 ```
 - **source**
 
-    A lista de objetos que deverão ser exportados como arquivo '.csv'.
+    A lista de objetos que devera popular o combobox.
+    
+- **group**
+    
+    O grupo de identificação desta lista.
     
     

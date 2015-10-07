@@ -47,8 +47,8 @@
         <div class="starter-template">
             <h1 translate>samplePage.txtTitle</h1>
             <p class="lead" translate>samplePage.txtDesc</p>
-            <div>
-                <csv-export-directive source="products"></csv-export-directive>
+            <div class="col-sm-offset-1 col-sm-10">
+                <pick-list ng-model="productList" source="products" group="Teste"></pick-list>
             </div>
         </div>
         
@@ -72,21 +72,21 @@
             $scope.nome = 'Teste';
             
             $scope.products = [
-                {id: 1, nome: 'produto 1', preco: '1,95'},
-                {id: 2, nome: 'produto 2', preco: '2,84'},
-                {id: 3, nome: 'produto 3', preco: '3,73'},
-                {id: 4, nome: 'produto 4', preco: '4,62'},
-                {id: 5, nome: 'produto 5', preco: '5,51'},
-                {id: 6, nome: 'produto 6', preco: '6,40'},
-                {id: 7, nome: 'produto 7', preco: '7,39'},
-                {id: 8, nome: 'produto 8', preco: '8,28'},
-                {id: 9, nome: 'produto 9', preco: '9,17'},
-                {id: 10, nome: 'produto 10', preco: '10,97'},
-                {id: 11, nome: 'produto 11', preco: '11,86'},
-                {id: 12, nome: 'produto 12', preco: '12,85'},
-                {id: 13, nome: 'produto 13', preco: '13,74'},
-                {id: 14, nome: 'produto 14', preco: '13,63'},
-                {id: 15, nome: 'produto 15', preco: '15,52'}
+                {id: 1, value: 'produto 1'},
+                {id: 2, value: 'produto 2'},
+                {id: 3, value: 'produto 3'},
+                {id: 4, value: 'produto 4'},
+                {id: 5, value: 'produto 5'},
+                {id: 6, value: 'produto 6'},
+                {id: 7, value: 'produto 7'},
+                {id: 8, value: 'produto 8'},
+                {id: 9, value: 'produto 9'},
+                {id: 10, value: 'produto 10'},
+                {id: 11, value: 'produto 11'},
+                {id: 12, value: 'produto 12'},
+                {id: 13, value: 'produto 13'},
+                {id: 14, value: 'produto 14'},
+                {id: 15, value: 'produto 15'}
             ];            
         }]);
     </script>

@@ -1,0 +1,53 @@
+<div class="form-group">
+
+    <div class="row">
+        <div class="col-sm-5">
+            <div class="input-group">
+                <input type="text" ng-model="filterAvailable[group]" class="form-control" placeholder="{{'form.txtFilter' | translate}}">
+                <span class="input-group-addon" id="basic-addon2"><span class="glyphicon glyphicon-search"></span></span>
+            </div>
+        </div>
+        <div class="col-sm-2 text-center ">
+
+        </div>
+        <div class="col-sm-5">
+            <div class="input-group">
+                <input type="text" ng-model="filterSelected[group]" class="form-control" placeholder="{{'form.txtFilter' | translate}}">
+                <span class="input-group-addon" id="basic-addon2"><span class="glyphicon glyphicon-search"></span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">&nbsp;</div>
+
+    <div class="row">
+        <div class="col-sm-5">
+            <label for="available-options" translate>form.txtavailableList</label>
+            <select ng-model="toAdd[group]" id="available-options" multiple="multiple" size="10" class="col-sm-12">
+                <option ng-repeat="option in availableList[group] | filter:filterAvailable[group] | orderBy:'value'" value='{{option.id}}'>{{option.value}}</option>
+            </select>
+        </div>
+        <div class="col-sm-2 text-center">
+            <div class="btn-group-vertical" role="group">
+                <button id="btn-add-all" class="btn btn-sm btn-default vbuttons">
+                    <span class="glyphicon glyphicon-fast-forward"></span>
+                </button>
+                <button id="btn-add" class="btn btn-sm btn-default vbuttons">
+                    <span class="glyphicon glyphicon-step-forward"></span>
+                </button>
+                <button id="btn-remove" class="btn btn-sm btn-default vbuttons">
+                    <span class="glyphicon glyphicon-step-backward"></span>
+                </button>
+                <button id="btn-remove-all" class="btn btn-sm btn-default vbuttons">
+                    <span class="glyphicon glyphicon-fast-backward"></span>
+                </button>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <label for="selected-options" translate>form.txtSelectedList</label>
+            <select ng-model="toRemove[group]" id="selected" id="selected-options" multiple="multiple" size="10" class="col-sm-12">
+                <option ng-repeat="option in selectedList[group] | filter:filterSelected[group] | orderBy: 'value'" value='{{option.id}}'>{{option.value}}</option>
+            </select>
+        </div>
+    </div>
+</div>

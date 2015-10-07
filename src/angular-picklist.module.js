@@ -4,14 +4,14 @@
 /*global csvExportDirective: false*/
 
 if (angular) {
-    
+
     var pickListModule = angular.module('PickList', ['ngCookies', 'pascalprecht.translate', 'tmh.dynamicLocale']);
-    
+
     // Configurando o módulo
     pickListModule.config(['$translateProvider', 'tmhDynamicLocaleProvider', function($translateProvider, tmhDynamicLocaleProvider){
-        
+
         console.debug('[CONFIG: PickList]', 'Configurando a aplicação.');
-        
+
         console.debug('[CONFIG: PickList]','Configurando tradutores');
         $translateProvider.useStaticFilesLoader({
             prefix: '/src/lang/',
@@ -28,7 +28,9 @@ if (angular) {
         tmhDynamicLocaleProvider.localeLocationPattern('/vendor/angular-i18n/angular-locale_{{locale}}.js');
         tmhDynamicLocaleProvider.useStorage('$cookieStore');
     }]);
-    
+
+    pickListModule.directive('pickList', ['$filter', AngularPickListDirective]);
+
     // Inicializando o módulo
     pickListModule.run(['$rootScope', function ($rootScope) {
         'use strict';

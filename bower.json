@@ -5,7 +5,7 @@
     "Robson Florentino <robson.florentino.silva@gmail.com>"
   ],
   "description": "Biblioteca angular para exibir um componente multiselect.",
-  "main": "src/angular-picklist.js",
+  "main": "src/angular-picklist.module.js",
   "moduleType": [
     "amd"
   ],

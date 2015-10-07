@@ -12,7 +12,7 @@ var distFile = 'angular-picklist';
 gulp.task('clean', function () {
     'use strict';
     console.info('\t\t- Limpando arquivos de distribuição.');
-    return gulp.src('dist/*', {force: true})
+    return gulp.src('dist', {force: true})
         .pipe(clean());
 });
 
@@ -29,8 +29,8 @@ gulp.task('minifyJsFiles', function () {
     'use strict';
     console.info('\t\t- Copiando os arquivos JS.');
     return gulp.src(['./src/services/*.js', './src/controllers/*.js', './src/directives/*.js', './src/*.js'])
-        .pipe(uglify())
-        .pipe(sourcemaps.init())
+        //.pipe(uglify())
+        //.pipe(sourcemaps.init())
         .pipe(concat(distFile + '.min.js'))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('./dist/'));

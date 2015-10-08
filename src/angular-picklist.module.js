@@ -1,29 +1,27 @@
 /*global angular: false*/
-/*global csvExportService: false*/
-/*global csvExportController: false*/
-/*global csvExportDirective: false*/
-
+/*global AngularPickListDirective: false*/
+/*global console: false*/
 if (angular) {
 
     var pickListModule = angular.module('PickList', ['ngCookies', 'pascalprecht.translate', 'tmh.dynamicLocale']);
 
     // Configurando o módulo
-    pickListModule.config(['$translateProvider', 'tmhDynamicLocaleProvider', function($translateProvider, tmhDynamicLocaleProvider){
-
+    pickListModule.config(['$translateProvider', 'tmhDynamicLocaleProvider', function ($translateProvider, tmhDynamicLocaleProvider) {
+        'use strict';
         console.debug('[CONFIG: PickList]', 'Configurando a aplicação.');
 
-        console.debug('[CONFIG: PickList]','Configurando tradutores');
+        console.debug('[CONFIG: PickList]', 'Configurando tradutores');
         $translateProvider.useStaticFilesLoader({
             prefix: '/src/lang/',
             suffix: '.json'
         });
 
-        console.debug('[CONFIG: PickList]','Configurando l10n.');
+        console.debug('[CONFIG: PickList]', 'Configurando l10n.');
         $translateProvider.preferredLanguage('pt-br');
         $translateProvider.fallbackLanguage(['en-us']);
         $translateProvider.useCookieStorage();
 
-        console.debug('[CONFIG: PickList]','Configurando i18n.');
+        console.debug('[CONFIG: PickList]', 'Configurando i18n.');
         tmhDynamicLocaleProvider.defaultLocale("pt-br");
         tmhDynamicLocaleProvider.localeLocationPattern('/vendor/angular-i18n/angular-locale_{{locale}}.js');
         tmhDynamicLocaleProvider.useStorage('$cookieStore');
